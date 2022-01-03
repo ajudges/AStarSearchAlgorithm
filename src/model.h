@@ -32,22 +32,22 @@ public:
         std::vector<int> outer;
         std::vector<int> inner;
     };
-    
+
     struct Building : Multipolygon {};
-    
+
     struct Leisure : Multipolygon {};
-    
+
     struct Water : Multipolygon {};
-    
+
     struct Landuse : Multipolygon {
         enum Type { Invalid, Commercial, Construction, Grass, Forest, Industrial, Railway, Residential };
         Type type;
     };
-    
+
     Model( const std::vector<std::byte> &xml );
-    
+
     auto MetricScale() const noexcept { return m_MetricScale; }    
-    
+
     auto &Nodes() const noexcept { return m_Nodes; }
     auto &Ways() const noexcept { return m_Ways; }
     auto &Roads() const noexcept { return m_Roads; }
