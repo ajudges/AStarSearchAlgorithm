@@ -1,6 +1,6 @@
-# Route Planning Project
+# A Star Search Algorithm
 
-This repo contains the starter code for the Route Planning project.
+This repo is an implementation of A Star Search Algorithm used in Route Planning.
 
 <img src="map.png" width="600" height="450" />
 
@@ -61,7 +61,6 @@ The testing executable is also placed in the `build` directory. From within `bui
 ```
 
 ## Troubleshooting
-* Some students have reported issues in cmake to find io2d packages, make sure you have downloaded [this](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md#xcode-and-libc).
 * For MAC Users cmake issues: Comment these lines from CMakeLists.txt under P0267_RefImpl
     ```
     if( NOT DEFINED IO2D_WITHOUT_SAMPLES )
@@ -96,9 +95,7 @@ The testing executable is also placed in the `build` directory. From within `bui
       * Enable WSL (Windows Subsystem for Linux) and use a distribution like [Ubuntu](https://ubuntu.com/wsl).(available from the windows store): 
       * Install the required dependencies (compiler, cmake etc.) in the WSL(as mentioned above for ubuntu)
       * Configure CLion to use the WSL [toolchain](https://www.jetbrains.com/help/clion/how-to-use-wsl-development-environment-in-product.html#wsl-tooclhain)
-      * Use the WSL toolchain to build the project
-      * If you are still facing errors, visit this [link](https://github.com/udacity/CppND-Route-Planning-Project/issues/9).
-     
+      * Use the WSL toolchain to build the project     
 
 * If you are facing errors with --config try to remove -- from the command.
 
