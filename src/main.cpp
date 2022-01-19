@@ -7,6 +7,7 @@
 #include "route_model.h"
 #include "render.h"
 #include "route_planner.h"
+#include "interval.h"
 
 using namespace std::experimental;
 
@@ -26,6 +27,23 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
         return std::nullopt;
     return std::move(contents);
 }
+
+void getInput(std::string user_input, float &x){
+    std::cout << "Enter value for " << user_input;
+    float  a;
+    std::cin >> a;
+
+    while (Interval(0.00, 100.00).contains(a) == false)
+    {
+        std::cout << a << "is out of range" << "\n";
+        std::cout << "Enter a different value" << "\n";
+        std::cin >> a;
+    }
+    x = a;
+    std::cout << "Accepted input value " << x;
+    return;
+}
+
 
 int main(int argc, const char **argv)
 {    
@@ -57,10 +75,10 @@ int main(int argc, const char **argv)
     float end_x;
     float end_y;
 
-    std::cin >> start_x;
-    std::cin >> start_y;
-    std::cin >> end_x;
-    std::cin >> end_y;
+    getInput("start_x", start_x);
+    getInput("start_y", start_y);
+    getInput("end_x", end_x);
+    getInput("end_y", end_y);
 
     // Build Model.
     RouteModel model{osm_data};
